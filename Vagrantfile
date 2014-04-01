@@ -6,7 +6,6 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
   config.vm.provision :salt do |salt|
-    salt.run_highstate = true
     salt.minion_config = "salt/minion.conf"
   end
 end
