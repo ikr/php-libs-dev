@@ -1,6 +1,4 @@
 apache2:
-  pkg:
-    - removed
   service:
     - dead
     - enable: False
@@ -9,7 +7,7 @@ nginx:
   pkg:
     - installed
     - require:
-      - pkg: apache2
+      - service: apache2
   service:
     - running
     - enable: True
